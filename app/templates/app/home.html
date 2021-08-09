@@ -1,0 +1,39 @@
+<html>
+<head>
+ <title>Make Prediction</title>
+</head>
+<body>
+ <form action="" method="post">
+ {% csrf_token %}
+ <span >Horizontal Spatial Coordinate :</span>
+ <input type="number" name="x-coordinate" required><br><br>
+ <span >Vertical Spatial Coordinate :</span>
+ <input class="input100" type="number" name="y-coordinate" required><br><br>
+ <span class="label-input100">FFMC Index :</span> 
+ <input class="input100" type="number" name="ffmc" required><br><br>
+ <span class="label-input100" style="left:-120px;">DMC Index :</span>
+ <input class="input100" type="number" name="dmc" required><br><br>
+ <span class="label-input100" style="left:-130px;">DC Index :</span>
+ <input class="input100" type="number" name="dc" required><br><br>                    
+ <span class="label-input100">ISI Index :</span>
+ <input class="input100" type="number" name="isi" required><br><br>
+ <span class="label-input100" style="left:-150px;">Temperature :</span>
+ <input class="input100" type="number" name="temperature" required><br><br>
+ <span class="label-input100" style="left:-150px;">Relative Humidity :</span>
+ <input class="input100" type="number" name="rh" required><br><br>
+ <span class="label-input100" style="left:-150px;">Wind :</span>
+ <input class="input100" type="number" name="wind" required><br><br>
+ <span class="label-input100" style="left:-150px;">Rain :</span>
+ <input class="input100" type="number" name="rain" required><br><br>
+ <button>Submit</button>
+ </form>
+ {% if not result %}
+    <p>Area: </p>
+ {% else %}
+    {% for res in result %}     
+    <p>Predicted: {{res.area}}</p>
+    {% endfor %}
+    <a href="{% url 'result' result %}">Save</a>
+ {% endif %}
+</body>
+</html>

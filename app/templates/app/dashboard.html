@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dashboard</title>
+    </head>
+    <body>
+        <h1>We are here</h1>
+        <table>
+            <tr>
+                <th>horizontal spatial coordinate</th>
+                <th>vertical spatial coordinate</th>
+                <th>ffmc index</th>
+                <th>dmc index</th>
+                <th>isi</th>
+                <th>temperature</th>
+                <th>relative humidity</th>
+                <th>wind</th>
+                <th>rain</th>
+                <th>area</th>
+            </tr>
+            {% for prediction in predictions %}
+            <tr>
+                <td>{{prediction.modelInput.horizontalSpatialCoordinate}}</td>
+                <td>{{prediction.modelInput.verticalSpatialCoordinate}}</td>
+                <td>{{prediction.modelInput.ffmcIndex}}</td>
+                <td>{{prediction.modelInput.dmcIndex}}</td>
+                <td>{{prediction.modelInput.dcIndex}}</td>
+                <td>{{prediction.modelInput.isi}}</td>
+                <td>{{prediction.modelInput.temperature}}</td>
+                <td>{{prediction.modelInput.relativeHumidity}}</td>
+                <td>{{prediction.modelInput.rain}}</td> 
+                <td>{{prediction.area}}</td> 
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>
