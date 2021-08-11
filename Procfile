@@ -1,1 +1,1 @@
-waitress-serve --listen=*:8000 appprojectname.wsgi:application —log-file -
+web: gunicorn name_of_your_app.wsgi —log-file -
