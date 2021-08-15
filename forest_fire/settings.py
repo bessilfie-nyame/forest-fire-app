@@ -36,13 +36,14 @@ ALLOWED_HOSTS = ["app-fire-forest.herokuapp.com", "127.0.0.1"]
 # Application definition
 
 INSTALLED_APPS = [
-    'app',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'whitenoise.runserver_nostatic'
     'django.contrib.staticfiles',
+    'app'
 ]
 
 MIDDLEWARE = [
@@ -145,5 +146,7 @@ LOGOUT_REDIRECT_URL = 'home'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
