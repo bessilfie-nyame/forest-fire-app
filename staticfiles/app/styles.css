@@ -28,16 +28,8 @@ a{
 }
 
 a:hover {
-    border: 1px solid #999;
-    border-radius: 3px;
-    padding-top: 5px;
-    outline: none;
-    white-space: nowrap;
-  }
-a:active::before {
-    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
-}
-
+    cursor: pointer;
+  } 
 
 .dashboard{
     margin: auto;

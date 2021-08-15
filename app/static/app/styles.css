@@ -27,19 +27,11 @@ a{
     text-decoration: none;
 }
 
-a:hover {
-    border: 1px solid #999;
-    border-radius: 3px;
-    padding-top: 5px;
-    outline: none;
-    white-space: nowrap;
-  }
-a:active::before {
-    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
-}
+/* a:hover {
+    cursor: pointer;
+  } */
 
-
-.dashboard{
+/* .dashboard{
     margin: auto;
     margin-left: 5rem;
 }
@@ -56,7 +48,7 @@ a:active::before {
 .auth a{
     padding-right: 15px;
     font-size: 1.2rem;
-}
+} */
 
 
 .main{
