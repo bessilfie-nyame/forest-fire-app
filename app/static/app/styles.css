@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: o;
+    font-size: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    background-color: black;
+}
+
+nav{
+    display: flex;
+    background-color: white;
+    height: 6%;
+    margin: 20px;
+    margin-left: 50px;
+}
+
+nav a{
+    font-size: 1.5rem;
+    color: black;
+    font-weight: 800;
+}
+
+a{
+    text-decoration: none;
+}
+
+.dashboard{
+    margin: auto;
+    margin-left: 5rem;
+}
+.dashboard a{  
+    padding: 0 5px 0 5px;
+}
+
+.auth{
+    display: flex;
+    margin: auto;
+    margin-right: 5rem;
+}
+
+.auth a{
+    padding-right: 15px;
+    font-size: 1.2rem;
+}
+
+.main{
+    border: 1px solid rgb(202, 167, 167);
+    width: 600px;
+    margin: auto;
+    margin-top: 5%;
+    background-color: rgb(43, 42, 42);
+    color: white;
+    border-radius: 15px 15px 15px 15px;
+    /*background-color: white;*/
+}
+
+form{
+    width: 600px;
+    margin: auto;
+    padding: 10px;
+}
+
+span{
+    margin-left: 25px;
+    margin-top: 30px;
+    width: 50%;
+    font-weight: 700px;
+}
+
+.inputElements{
+    width: 250px;
+    height: 30px;
+    position: absolute;
+    right: 450;
+}
+
+#btn{
+    background-color: #3BAF9F;
+    display: block;
+    margin: 20px 0px 0px 20px;
+    text-align: center;
+    border-radius: 12px;
+    border: 2px solid #366473;
+    padding: 10px 20px;
+    outline: none;
+    color: white;
+    cursor: pointer;
+    transition: 0.25px;
+}
+
+#btn:hover{
+    background-color: #5390f5;
+}

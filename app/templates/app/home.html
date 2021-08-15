@@ -1,18 +1,12 @@
-<html>
-<head>
- <title>Make Prediction</title>
-</head>
-<body>
-   <nav style="display: flex; padding: 2px;">
-      {% if user.username %}
-          <a class="logout-button" href="{% url 'logout' %}">Log Out</a>
-      {% else %}
-          <a class="logout-button" href="{% url 'login' %}">Log In</a>/
-          <a class="logout-button" href="{% url 'signup' %}">Sign up</a>
-      {% endif %}
-  </nav>
+{% extends "app/base.html" %}
 
-   <form action="" method="post">
+{% load static %}
+
+{% block head %}
+  <link rel="stylesheet" href="{% static 'app/style.css' %}">
+{% endblock %}
+{% block content %}
+  <form action="" method="post">
       {% csrf_token %}
       <span >Horizontal Spatial Coordinate :</span>
       <input type="number" name="x-coordinate" required><br><br>
@@ -44,5 +38,4 @@
     {% endfor %}
     <a href="{% url 'result' result %}">Save</a>
  {% endif %}
-</body>
-</html>
+{% endblock %}
