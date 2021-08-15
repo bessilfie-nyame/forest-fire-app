@@ -1,10 +1,18 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Dashboard</title>
-    </head>
-    <body>
-        <h1>We are here</h1>
+{% extends "app/base.html" %}
+
+{% load static %}
+
+{% block head %}
+  <link rel="stylesheet" href="{% static 'app/styles.css' %}">
+{% endblock %}
+{% block content %}
+    <nav>
+        <div class="dashboard"><a class="logout-button" href="{% url 'home' %}">Home</a></div>
+        <div class="auth">
+            <a href="{% url 'logout' %}">Log Out</a>
+        </div> 
+    </nav>
+    <div style="background-color: white; height: 80%;">
         <table>
             <tr>
                 <th>horizontal spatial coordinate</th>
@@ -33,5 +41,5 @@
             </tr>
             {% endfor %}
         </table>
-    </body>
-</html>
+    </div>
+{% endblock %}

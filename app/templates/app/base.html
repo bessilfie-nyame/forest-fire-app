@@ -5,17 +5,6 @@
   {% endblock %}
 </head>
 <body>
-    <nav>
-        <div class="dashboard"><a class="logout-button" href="{% url 'dashboard' %}">Dashboard</a></div>
-        <div class="auth"></div>
-            {% if user.username %} 
-                <a href="{% url 'logout' %}">Log Out</a>
-            {% else %}
-                <a href="{% url 'login' %}">Log In <span>|</span></a>
-                <a class="logout-button" href="{% url 'signup' %}">Sign up</a>
-            {% endif %}
-        </div> 
-    </nav>
     {% block content %}
     {% endblock %}
 </body>

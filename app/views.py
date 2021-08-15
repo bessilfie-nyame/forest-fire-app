@@ -7,6 +7,7 @@ from django.urls import reverse_lazy
 from django.views.generic import ListView
 from django.views.generic.edit import CreateView
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required 
 
 from .models import *
 from model.model import AppModel
@@ -68,6 +69,7 @@ def home(request):
 
   return render(request, 'app/home.html', context=context)
 
+@login_required
 def result(request, prediction):
     context = {"result": None}
 

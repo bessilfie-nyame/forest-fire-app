@@ -6,36 +6,59 @@
   <link rel="stylesheet" href="{% static 'app/styles.css' %}">
 {% endblock %}
 {% block content %}
-  <form action="" method="post">
-      {% csrf_token %}
-      <span >Horizontal Spatial Coordinate :</span>
-      <input type="number" name="x-coordinate" required><br><br>
-      <span >Vertical Spatial Coordinate :</span>
-      <input type="number" name="y-coordinate" required><br><br>
-      <span >FFMC Index :</span> 
-      <input type="number" name="ffmc" required><br><br>
-      <span style="left:-120px;">DMC Index :</span>
-      <input type="number" name="dmc" required><br><br>
-      <span style="left:-130px;">DC Index :</span>
-      <input  type="number" name="dc" required><br><br>                    
-      <span >ISI Index :</span>
-      <input type="number" name="isi" required><br><br>
-      <span  style="left:-150px;">Temperature :</span>
-      <input type="number" name="temperature" required><br><br>
-      <span style="left:-150px;">Relative Humidity :</span>
-      <input type="number" name="rh" required><br><br>
-      <span style="left:-150px;">Wind :</span>
-      <input type="number" name="wind" required><br><br>
-      <span style="left:-150px;">Rain :</span>
-      <input type="number" name="rain" required><br><br>
-      <button>Submit</button>
-  </form>
-  {% if not result %}
-    <p>Area: </p>
-  {% else %}
-    {% for res in result %}     
-    <p>Predicted: {{res.area}}</p>
-    {% endfor %}
-    <a href="{% url 'result' result %}">Save</a>
- {% endif %}
+  <nav>
+    <div class="dashboard"><a class="logout-button" href="{% url 'dashboard' %}">Dashboard</a></div>
+    <div class="auth">
+        {% if user.username %} 
+            <a href="{% url 'logout' %}">Log Out</a>
+        {% else %}
+            <a href="{% url 'login' %}">Log In <span>|</span></a>
+            <a href="{% url 'signup' %}">Sign up</a>
+        {% endif %}
+    </div> 
+  </nav>
+  <div class="main">
+    <h1 style="font-size: 1.5rem; font-weight: 800; margin: 5px 0 5px 0; text-align: center;">
+      Forest Fire Area Prediction
+    </h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        <span >Horizontal Spatial Coordinate :</span>
+        <input class="inputElements" type="number" name="x-coordinate" required><br><br>
+        <span >Vertical Spatial Coordinate :</span>
+        <input class="inputElements" type="number" name="y-coordinate" required><br><br>
+        <span >FFMC Index :</span> 
+        <input class="inputElements" type="number" name="ffmc" required><br><br>
+        <span style="left:-120px;">DMC Index :</span>
+        <input class="inputElements" type="number" name="dmc" required><br><br>
+        <span style="left:-130px;">DC Index :</span>
+        <input class="inputElements" type="number" name="dc" required><br><br>                    
+        <span >ISI Index :</span>
+        <input class="inputElements" type="number" name="isi" required><br><br>
+        <span  style="left:-150px;">Temperature :</span>
+        <input class="inputElements" type="number" name="temperature" required><br><br>
+        <span style="left:-150px;">Relative Humidity :</span>
+        <input class="inputElements" type="number" name="rh" required><br><br>
+        <span style="left:-150px;">Wind :</span>
+        <input class="inputElements" type="number" name="wind" required><br><br>
+        <span style="left:-150px;">Rain :</span>
+        <input class="inputElements" type="number" name="rain" required><br><br>
+        <div style="display: flex;">
+          <button id="btn">Submit</button>
+          <a id="btn" style="margin-left: 17rem;" href="{% url 'home' %}">Reset</a>
+        </div>
+    </form>
+    <div class="result">
+      {% if not result %}
+        <p>{{' '}} </p>
+      {% else %}
+      <div class="display-result">
+      {% for res in result %}     
+        <p>Predicted Area: <span class="predict">{{res.area}}</span></p>
+      {% endfor %}
+        <a href="{% url 'result' result %}">Save</a>
+      {% endif %}
+      </div>
+    </div>
+  </div>
 {% endblock %}

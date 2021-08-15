@@ -2,16 +2,24 @@
 <html>
     <head>
     </head>
-    <body>
-        <div class="login-form">
-            <h2>Please login</h2>
-            <form class="login" method="post">
-                <div>
-                    {% csrf_token %}
-                    {{ form.as_p}}  
-                    <input type="submit" value="Login"/>
-                </div>
-            </form>
+    <body style="background-color: gray;">
+        <div style="height: 25rem; width: 30rem; background-color: rgb(168, 164, 164); margin: auto; margin-top: 100px;">
+            <div style="padding: 50px; font-size: 1.5rem; font-weight: 800;" class="login-form"> 
+                <h2>Please login</h2>
+                <form class="login" method="post">
+                    <div >
+                        {% csrf_token %}
+                        {{ form.as_p}}  
+                        <div style="display: flex;">
+                            <input style="font-size: 1.3rem; border: 1px solid; border-radius: 3px;" 
+                            type="submit" value="Login"/>
+                            <a style="margin-left: 140px; border: 1px solid; border-radius: 3px; text-decoration: none; background-color: white; color: black;"
+                             href="{% url 'signup' %}">Sign up</a>
+                        </div>
+                        
+                    </div>
+                </form>
+            </div>
         </div>
     </body>
 </html>
