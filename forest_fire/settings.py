@@ -34,6 +34,7 @@ ALLOWED_HOSTS = ["app-fire-forest.herokuapp.com", "127.0.0.1"]
 
 
 # Application definition
+# WHITENOISE_USE_FINDERS = True
 
 INSTALLED_APPS = [
     'django.contrib.admin',
